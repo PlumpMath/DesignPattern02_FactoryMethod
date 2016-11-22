@@ -13,9 +13,9 @@ namespace DesignPattern02_FactoryMethod
         static void Main(string[] args)
         {
             Factory factory = new IDCardFactory();
-            Product card1 = new IDCard("Tom");
-            Product card2 = new IDCard("Mike");
-            Product card3 = new IDCard("Beth");
+            Product card1 = factory.Create("Tom");
+            Product card2 = factory.Create("Mike");
+            Product card3 = factory.Create("Beth");
 
             card1.Use();
             card2.Use();
