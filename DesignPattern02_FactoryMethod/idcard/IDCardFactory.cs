@@ -9,7 +9,7 @@ namespace DesignPattern02_FactoryMethod.idcard
 {
     class IDCardFactory : Factory
     {
-        private List<string> owners = new List<string>();
+        List<IDCard> owners = new List<IDCard>();
 
         protected override Product CreateProduct(string owner)
         {
@@ -18,10 +18,10 @@ namespace DesignPattern02_FactoryMethod.idcard
 
         protected override void RegisterProduct(Product product)
         {
-            owners.Add(((IDCard)product).GetOwner());
+            owners.Add((IDCard)product);
         }
 
-        public List<string> GetOwners()
+        public List<IDCard> GetOwners()
         {
             return owners;
         }
